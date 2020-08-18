@@ -1,9 +1,11 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName;
+using PierresBakery.Models;
 
-namespace ProjectNameTests {
+namespace PierresBakeryTests 
+{
     [TestClass]
-    public class ClassNameTests {
+    public class BreadPastryTests 
+    {
         // Test methods go here
         [TestMethod]
         public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue () 
