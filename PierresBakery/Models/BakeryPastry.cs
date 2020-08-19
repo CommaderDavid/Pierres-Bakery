@@ -1,9 +1,13 @@
+using System.Collections.Generic;
 using System;
 
 namespace PierresBakery.Models 
 {
-    public class Pastry 
+    public class BakeryPastry 
     {
-        // properties, constructors, methods, etc. go here
+        public static Dictionary<string, int> pastryPrice = new Dictionary<string, int>()
+        {
+            { "pastry", 2 }
+        };
     }
 }

@@ -12,9 +12,12 @@ namespace PierresBakeryTests
         public void BreadSetPrice_DisplaysBreadSetPrice_Int () 
         {
             // Arrange
-            int bread = "5";
-            
-            // Assert.AreEqual (EXPECTED RESULT, CODE TO TEST);
+            string bread = "bread";
+            BakeryBread userBread = new BakeryBread(bread);
+            //Act
+            int result = userBread.BreadTotalPrice(bread);
+            // Assert
+            Assert.AreEqual (5, result);
         }
     }
 
