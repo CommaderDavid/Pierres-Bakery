@@ -19,6 +19,8 @@ namespace PierresBakeryTests
             // Assert
             Assert.AreEqual (5, result);
         }
+
+        
     }
 
     [TestClass]
@@ -28,8 +30,13 @@ namespace PierresBakeryTests
         [TestMethod]
         public void PastrySetPrice_DisplaysPastrySetPrice_Int () 
         {
-            // any necessary logic to prep for test; instantiating new classes, etc.
-            // Assert.AreEqual (EXPECTED RESULT, CODE TO TEST);
+            //Arrange
+            string pastry = "pastry";
+            BakeryPastry userPastry = new BakeryPastry(pastry);
+            // Act
+            int result = userPastry.PastryTotalPrice(pastry);
+            // Assert
+            Assert.AreEqual (2, result);
         }
     }
 }
