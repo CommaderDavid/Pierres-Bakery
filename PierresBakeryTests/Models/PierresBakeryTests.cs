@@ -13,9 +13,10 @@ namespace PierresBakeryTests
         {
             // Arrange
             string bread = "bread";
-            BakeryBread userBread = new BakeryBread(bread);
+            int total = 1;
+            BakeryBread userBread = new BakeryBread(bread, total);
             //Act
-            int result = userBread.BreadTotalPrice(bread);
+            int result = userBread.BreadTotalPrice(bread, total);
             // Assert
             Assert.AreEqual (5, result);
         }
@@ -25,11 +26,12 @@ namespace PierresBakeryTests
         {
             // Arrange
             string bread = "bread";
-            BakeryBread userBread = new BakeryBread(bread);
+            int total = 4;
+            BakeryBread userBread = new BakeryBread(bread, total);
             //Act
-            int result = userBread.BreadTotalPrice(bread);
+            int result = userBread.BreadTotalPrice(bread, total);
             // Assert
-            Assert.AreEqual(5, result);
+            Assert.AreEqual(20, result);
         }
 
     }
@@ -43,11 +45,25 @@ namespace PierresBakeryTests
         {
             //Arrange
             string pastry = "pastry";
-            BakeryPastry userPastry = new BakeryPastry(pastry);
+            int total = 1;
+            BakeryPastry userPastry = new BakeryPastry(pastry, total);
             // Act
-            int result = userPastry.PastryTotalPrice(pastry);
+            int result = userPastry.PastryTotalPrice(pastry, total);
             // Assert
             Assert.AreEqual (2, result);
+        }
+
+        [TestMethod]
+        public void PastryTotalPrice_DisplaysPastryTotalOrderPrice_Int()
+        {
+            //Arrange
+            string pastry = "pastry";
+            int total = 5;
+            BakeryPastry userPastry = new BakeryPastry(pastry, total);
+            // Act
+            int result = userPastry.PastryTotalPrice(pastry, total);
+            // Assert
+            Assert.AreEqual(10, result);
         }
     }
 }
