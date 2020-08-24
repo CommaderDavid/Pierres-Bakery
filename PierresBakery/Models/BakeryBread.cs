@@ -29,5 +29,16 @@ namespace PierresBakery.Models
 
             return total;
         }
+
+        public int CalculateTotal()
+        {
+            int inputedTotal = 10;
+            int seeDeal = 2;
+            if ((inputedTotal % seeDeal) = 0)
+            {
+                
+                return 5;
+            }
+        }
     }
 }

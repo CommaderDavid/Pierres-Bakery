@@ -34,6 +34,19 @@ namespace PierresBakeryTests
             Assert.AreEqual(20, result);
         }
 
+        [TestMethod]
+        public void BreadDeals_DisplaysBreadDeals_String()
+        {
+            // Arrange
+            string bread = "bread deals";
+            int total = 4;
+            BakeryBread userBread = new BakeryBread(bread, total);
+            //Act
+            int result = userBread.BreadTotalPrice(bread, total);
+            // Assert
+            Assert.AreEqual(20, result);
+        }
+
     }
 
     [TestClass]
