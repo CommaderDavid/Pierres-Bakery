@@ -22,22 +22,15 @@ namespace PierresBakery.Models
         public int BreadTotalPrice(string food, int totalWant)
         {
             int total = 0;
-            
-            total += breadPrice[food];
-
-            total *= totalWant;
-
-            return total;
-        }
-
-        public int CalculateTotal()
-        {
-            int inputedTotal = 10;
-            int seeDeal = 2;
-            if ((inputedTotal % seeDeal) = 0)
+            total = (totalWant / 2) * breadPrice[food];
+            if (totalWant % 2 == 0)
             {
-                
-                return 5;
+                return total;
+            }
+            else
+            {
+                total += breadPrice[food];
+                return total;
             }
         }
     }
