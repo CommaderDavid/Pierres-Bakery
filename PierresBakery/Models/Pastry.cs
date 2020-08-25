@@ -3,7 +3,7 @@ using System;
 
 namespace PierresBakery.Models 
 {
-    public class BakeryPastry 
+    public class Pastry 
     {
         public string UserOrder { get; set; }
         public int OrderNumber { get; set; }
@@ -14,7 +14,7 @@ namespace PierresBakery.Models
             { "pastry", 2 }
         };
 
-        public BakeryPastry(string userOrder, int orderNumber)
+        public Pastry(string userOrder, int orderNumber)
         {
             UserOrder = userOrder;
             OrderNumber = orderNumber;
