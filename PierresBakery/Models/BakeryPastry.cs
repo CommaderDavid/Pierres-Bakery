@@ -7,6 +7,7 @@ namespace PierresBakery.Models
     {
         public string UserOrder { get; set; }
         public int OrderNumber { get; set; }
+        public static int DealOrder { get; } = 5;
 
         public static Dictionary<string, int> pastryPrice = new Dictionary<string, int>()
         {
@@ -22,12 +23,16 @@ namespace PierresBakery.Models
         public int PastryTotalPrice(string food, int totalWant)
         {
             int total = 0;
-
-            total += pastryPrice[food];
-
-            total *= totalWant;
-
-            return total;
+            total = (totalWant / 3) * DealOrder;
+            if (totalWant % 3 == 0)
+            {
+                return total;
+            }
+            else
+            {
+                total += (totalWant % 3) * pastryPrice[food];
+                return total;
+            }
         }
     }
 }

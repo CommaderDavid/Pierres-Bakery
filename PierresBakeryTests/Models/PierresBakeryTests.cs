@@ -9,7 +9,7 @@ namespace PierresBakeryTests
     {
         // Test methods go here
         [TestMethod]
-        public void BreadSetPrice_DisplaysBreadSetPrice_Int () 
+        public void BreadSetPrice_DisplaysBreadSetPrice_Int() 
         {
             // Arrange
             string bread = "bread";
@@ -35,7 +35,7 @@ namespace PierresBakeryTests
         }
 
         [TestMethod]
-        public void BreadDeals_DisplaysBreadDeals_String()
+        public void BreadDeals_DisplaysBreadDeals_Int()
         {
             // Arrange
             string bread = "bread";
@@ -54,7 +54,7 @@ namespace PierresBakeryTests
     {
         // Test methods go here
         [TestMethod]
-        public void PastrySetPrice_DisplaysPastrySetPrice_Int () 
+        public void PastrySetPrice_DisplaysPastrySetPrice_Int() 
         {
             //Arrange
             string pastry = "pastry";
@@ -76,7 +76,20 @@ namespace PierresBakeryTests
             // Act
             int result = userPastry.PastryTotalPrice(pastry, total);
             // Assert
-            Assert.AreEqual(10, result);
+            Assert.AreEqual(9, result);
+        }
+
+        [TestMethod]
+        public void PastryDealPrice_DisplaysPastryDealPrice_Int()
+        {
+            //Arrange
+            string pastry = "pastry";
+            int total = 9;
+            BakeryPastry userPastry = new BakeryPastry(pastry, total);
+            // Act
+            int result = userPastry.PastryTotalPrice(pastry, total);
+            // Assert
+            Assert.AreEqual(15, result);
         }
     }
 }
