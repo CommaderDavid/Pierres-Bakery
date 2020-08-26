@@ -17,13 +17,38 @@ namespace PierresBakery
             Console.WriteLine("Bread: Buy 2 get 1 free");
             Console.WriteLine("Pastry: Buy 3 for $5");
             Console.WriteLine("------------------------------");
-            Console.WriteLine("Which would you like to order: [b for Bread / p for Pastry]");
-            string type = Console.ReadLine().ToLower();
-            if (type == "b")
+            Console.WriteLine("What would you like to do: ['order' / 'view']");
+            string userDesition = Console.ReadLine().ToLower();
+            int breadOrder = 0;
+            int pastryOrder = 0;
+            if (userDesition == "order")
             {
-                Console.WriteLine("How many do you want to order?");
-                Console.ReadLine();
-                Bread userBread = new Bread();
+                Console.WriteLine("------------------------------");
+                Console.WriteLine("Which would you like to order: [Bread / Pastry]");
+                string type = Console.ReadLine().ToLower();
+                if (type == "bread")
+                {
+                    Console.WriteLine("How many loaves do you want to order?");
+                    int numberBread = int.Parse(Console.ReadLine());
+                    Bread userBread = new Bread(type, numberBread);
+                    breadOrder = userBread.BreadTotalPrice(type, numberBread);
+                    Console.WriteLine("Order received");
+                    Main();
+                }
+                else if (type == "pastry")
+                {
+                    Console.WriteLine("How many pastrys do you want to order?");
+                    int numberPastry = int.Parse(Console.ReadLine());
+                    Pastry userPastry = new Pastry(type, numberPastry);
+                    pastryOrder = userPastry.PastryTotalPrice(type, numberPastry);
+                    Console.WriteLine("Order received");
+                    Main();
+                }
+            }
+            else if (userDesition == "view")
+            {
+                Console.WriteLine("Your order of bread is $" + breadOrder);
+                Console.WriteLine("Your order of pastrys is $" + pastryOrder);
             }
         }
     }

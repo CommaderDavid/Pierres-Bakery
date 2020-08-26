@@ -17,6 +17,7 @@ namespace PierresBakery.Models
         {
             UserOrder = userOrder;
             OrderNumber = orderNumber;
+            _instance.Add(this);
         }
 
         public int BreadTotalPrice(string food, int totalWant)
