@@ -12,12 +12,18 @@ namespace PierresBakery.Models
         {
             { "bread", 5 }
         };
+        private static List<Bread> _instances = new List<Bread>();
 
         public Bread(string userOrder, int orderNumber)
         {
             UserOrder = userOrder;
             OrderNumber = orderNumber;
-            _instance.Add(this);
+            _instances.Add(this);
+        }
+
+        public static List<Bread> GetAll()
+        {
+            return _instances;
         }
 
         public int BreadTotalPrice(string food, int totalWant)
