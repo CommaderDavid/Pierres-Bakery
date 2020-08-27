@@ -9,6 +9,19 @@ namespace PierresBakeryTests
     {
         // Test methods go here
         [TestMethod]
+        public void PastryTotalOrder_DisplaysPastryOrderTotal_Int()
+        {
+            //Arrange
+            string pastry = "pastry";
+            int total = 19;
+            Pastry userPastry = new Pastry(pastry, total);
+            // Act
+            int result = Pastry.Total;
+            // Assert
+            Assert.AreEqual(32, result);
+        }
+
+        [TestMethod]
         public void PastrySetPrice_DisplaysPastrySetPrice_Int()
         {
             //Arrange

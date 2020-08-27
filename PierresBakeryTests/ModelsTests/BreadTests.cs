@@ -9,6 +9,18 @@ namespace PierresBakeryTests
     {
         // Test methods go here
         [TestMethod]
+        public void BreadTotalOrder_DisplaysBreadOrderTotal_Int()
+        {
+            // Arrange
+            string bread = "bread";
+            int total = 12;
+            Bread userBread = new Bread(bread, total);
+            //Act
+            int result = Bread.Total;
+            // Assert
+            Assert.AreEqual(30, result);
+        }
+        [TestMethod]
         public void BreadSetPrice_DisplaysBreadSetPrice_Int() 
         {
             // Arrange
