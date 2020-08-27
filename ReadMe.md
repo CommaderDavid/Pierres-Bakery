@@ -1,8 +1,8 @@
-# Project name
-#### Lesson, for Fidgetech
-#### Date:  by:_**David Boedigheimer**_
+# Pierres Bakery
+#### 3.1.5.1, for Fidgetech
+#### Date:8/27/20  by:_**David Boedigheimer**_
 ### Description
-=
+This program takes the users inputed order of bread and pastry, and then calculates with the special deals that Pierres offers. The program then displays the total for bread and pastry. This program uses C#, and runs 4 tests both for bread and pastry.
 ### BDD Process
 1. Bread and Pastry display a set price.
       * **Input**: "Bread", "Pastry"
@@ -17,11 +17,20 @@
       * **Input**: 2 bread, 3 pastry
       * **Output**: $5, $5
 ### Setup
-*
+* Click on clone or download
+* Copy link to clipboard
+* Open your preferred terminal
+* Navigate to `$cd Desktop`
+* Create a folder to house the copy: `$mkdir "Copy"`
+* Paste the link, (this is using github): `$git clone "Link"`
+* Navigate to the PierresBakeryTests folder
+* Run `dotnet restore` in the terminal
+* Navigate back to the PierresBakery folder
+* Run `dotnet build` then `dotnet run', and enjoy.
 ### Contact
-Contact me if you have any concerns or questions at
+Contact me if you have any concerns or questions at stealth259@gmail.com
 ### Known bugs
-
+There are no known bugs in this program
 ### License
-
+This program is lisensed under the MIT license.
 Copyright (c) 2020 _**David Boedigheimer**_
