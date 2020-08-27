@@ -19,8 +19,6 @@ namespace PierresBakery
             Console.WriteLine("------------------------------");
             Console.WriteLine("What would you like to do: ['order' / 'view']");
             string userDesition = Console.ReadLine().ToLower();
-            int breadOrder = 0;
-            int pastryOrder = 0;
             if (userDesition == "order")
             {
                 Console.WriteLine("------------------------------");
@@ -31,7 +29,6 @@ namespace PierresBakery
                     Console.WriteLine("How many loaves do you want to order?");
                     int numberBread = int.Parse(Console.ReadLine());
                     Bread userBread = new Bread(type, numberBread);
-                    breadOrder = userBread.BreadTotalPrice(type, numberBread);
                     Console.WriteLine("Order received");
                     Main();
                 }
@@ -40,15 +37,14 @@ namespace PierresBakery
                     Console.WriteLine("How many pastrys do you want to order?");
                     int numberPastry = int.Parse(Console.ReadLine());
                     Pastry userPastry = new Pastry(type, numberPastry);
-                    pastryOrder = userPastry.PastryTotalPrice(type, numberPastry);
                     Console.WriteLine("Order received");
                     Main();
                 }
             }
             else if (userDesition == "view")
             {
-                Console.WriteLine("Your order of bread is $" + breadOrder);
-                Console.WriteLine("Your order of pastrys is $" + pastryOrder);
+                Console.WriteLine("Your order of bread is $" + Bread.Total);
+                Console.WriteLine("Your order of pastrys is $" + Pastry.Total);
             }
         }
     }

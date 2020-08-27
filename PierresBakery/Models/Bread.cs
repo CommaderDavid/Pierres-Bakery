@@ -7,23 +7,19 @@ namespace PierresBakery.Models
     {
         public string UserOrder { get; set; }
         public int OrderNumber { get; set; }
+        public static int Total { get; set; } = 0;   // mainting a total of all ordered bread
+
 
         public static Dictionary<string, int> breadPrice = new Dictionary<string, int> ()
         {
             { "bread", 5 }
         };
-        private static List<Bread> _instances = new List<Bread>();
 
         public Bread(string userOrder, int orderNumber)
         {
             UserOrder = userOrder;
             OrderNumber = orderNumber;
-            _instances.Add(this);
-        }
-
-        public static List<Bread> GetAll()
-        {
-            return _instances;
+            Total += BreadTotalPrice(userOrder, orderNumber);   //this adds the current order's total to the entire total of all breads
         }
 
         public int BreadTotalPrice(string food, int totalWant)

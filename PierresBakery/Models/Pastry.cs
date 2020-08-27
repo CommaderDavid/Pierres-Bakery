@@ -7,7 +7,8 @@ namespace PierresBakery.Models
     {
         public string UserOrder { get; set; }
         public int OrderNumber { get; set; }
-        public static int DealOrder { get; } = 5;
+        public static int DealOrder { get; } = 5;   // static property available to all pastry object
+        public static int Total { get; set; } = 0;
 
         public static Dictionary<string, int> pastryPrice = new Dictionary<string, int>()
         {
@@ -18,6 +19,7 @@ namespace PierresBakery.Models
         {
             UserOrder = userOrder;
             OrderNumber = orderNumber;
+            Total += PastryTotalPrice(userOrder, orderNumber);   //this adds the current order's total to the entire total of all pastrys
         }
 
         public int PastryTotalPrice(string food, int totalWant)
