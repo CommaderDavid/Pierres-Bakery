@@ -43,8 +43,8 @@ namespace PierresBakery
             }
             else if (userDesition == "view")
             {
-                Console.WriteLine("Your order of bread is $" + Bread.Total);
-                Console.WriteLine("Your order of pastrys is $" + Pastry.Total);
+                Console.WriteLine("Your order of bread is $" + Bread.BreadTotalPrice());
+                Console.WriteLine("Your order of pastrys is $" + Pastry.PastryTotalPrice());
             }
         }
     }

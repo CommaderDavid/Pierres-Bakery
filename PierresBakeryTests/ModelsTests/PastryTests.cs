@@ -5,8 +5,13 @@ using System;
 namespace PierresBakeryTests
 {
     [TestClass]
-    public class PastryTests
+    public class PastryTests : IDisposable
     {
+        public void Dispose()
+        {
+            Pastry.ClearAll();
+        }
+
         // Test methods go here
         [TestMethod]
         public void PastryTotalOrder_DisplaysPastryOrderTotal_Int()
@@ -16,7 +21,7 @@ namespace PierresBakeryTests
             int total = 19;
             Pastry userPastry = new Pastry(pastry, total);
             // Act
-            int result = Pastry.Total;
+            int result = Pastry.PastryTotalPrice();
             // Assert
             Assert.AreEqual(32, result);
         }
@@ -29,7 +34,7 @@ namespace PierresBakeryTests
             int total = 1;
             Pastry userPastry = new Pastry(pastry, total);
             // Act
-            int result = userPastry.PastryTotalPrice(pastry, total);
+            int result = Pastry.PastryTotalPrice();
             // Assert
             Assert.AreEqual(2, result);
         }
@@ -42,7 +47,7 @@ namespace PierresBakeryTests
             int total = 5;
             Pastry userPastry = new Pastry(pastry, total);
             // Act
-            int result = userPastry.PastryTotalPrice(pastry, total);
+            int result = Pastry.PastryTotalPrice();
             // Assert
             Assert.AreEqual(9, result);
         }
@@ -55,7 +60,7 @@ namespace PierresBakeryTests
             int total = 9;
             Pastry userPastry = new Pastry(pastry, total);
             // Act
-            int result = userPastry.PastryTotalPrice(pastry, total);
+            int result = Pastry.PastryTotalPrice();
             // Assert
             Assert.AreEqual(15, result);
         }
