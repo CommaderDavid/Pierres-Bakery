@@ -7,8 +7,7 @@ namespace PierresBakery.Models
     {
         public string UserOrder { get; set; }
         public int OrderNumber { get; set; }
-        public static int Total { get; set; } = 0;   // mainting a total of all ordered bread
-
+        public static int TotalOrdered { get; set; } = 0;   // mainting a total of all ordered bread
 
         public static Dictionary<string, int> breadPrice = new Dictionary<string, int> ()
         {
@@ -19,20 +18,26 @@ namespace PierresBakery.Models
         {
             UserOrder = userOrder;
             OrderNumber = orderNumber;
-            Total += BreadTotalPrice(userOrder, orderNumber);   //this adds the current order's total to the entire total of all breads
+            TotalOrdered += orderNumber;   //this adds the current order's total to the entire total of all breads
         }
 
-        public int BreadTotalPrice(string food, int totalWant)
+        public static void ClearAll()
         {
+            TotalOrdered = 0;
+        }
+
+        public static int BreadTotalPrice()
+        {
+            string food = "bread";
             int total = 0;
-            total = (totalWant / 2) * breadPrice[food];
-            if (totalWant % 2 == 0)
+            total = (TotalOrdered / 3) * (breadPrice[food] * 2);
+            if (TotalOrdered % 3 == 0)
             {
                 return total;
             }
             else
             {
-                total += breadPrice[food];
+                total += (breadPrice[food] * (TotalOrdered % 3));
                 return total;
             }
         }
